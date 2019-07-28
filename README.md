@@ -1,4 +1,4 @@
-# utils
+# Utils
 Untested utility functions.
 
 # Languages
