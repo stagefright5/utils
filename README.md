@@ -1,10 +1,9 @@
-# Utils
-Untested utility functions.
+# Utils - Dump of Untested utility functions.
 
-# Languages
+## Languages
 - JavaScript
 
-# Linters Config
+## Linters Config
 - .jshintrc
 ```js
 {
