@@ -5,7 +5,7 @@ Untested utility functions.
 - JavaScript
 
 # Linters Config
-## .jshintrc
+- .jshintrc
 ```js
 {
     "esversion": 8,
