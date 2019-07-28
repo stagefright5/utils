@@ -11,15 +11,15 @@ function recursiveGetVal(Obj, key) {
   }
 }
 
-function checkStudioSettingsProperties(settingsJson, defaultStudioSettings) {
-  Object.keys(defaultStudioSettings).map(key => {
+function checkSettingsProperties(settingsJson, defaultSettings) {
+  Object.keys(defaultSettings).map(key => {
     if (!settingsJson[key]) {
-      settingsJson[key] = defaultStudioSettings[key];
-    } else if (typeof defaultStudioSettings[key] === 'object') {
-      this.checkStudioSettingsProperties(settingsJson[key], defaultStudioSettings[key]);
+      settingsJson[key] = defaultSettings[key];
+    } else if (typeof defaultSettings[key] === 'object') {
+      checkSettingsProperties(settingsJson[key], defaultSettings[key]);
     } else {
-      if (settingsJson[key] !== defaultStudioSettings[key]) {
-        settingsJson[key] = defaultStudioSettings[key];
+      if (settingsJson[key] !== defaultSettings[key]) {
+        settingsJson[key] = defaultSettings[key];
       }
     }
   });
