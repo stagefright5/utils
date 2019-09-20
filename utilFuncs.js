@@ -76,11 +76,34 @@ function getObjAsString(object) {
     if (!(v[1] instanceof Object)) {
       objectAsString += `${v[0]}: ${v[1]},`;
     } else {
-      objectAsString += `${v[0]}: ${this.getObjAsString(v[1])}`;
+      objectAsString += `${v[0]}: ${this.getObjAsString(v[1])},`;
     }
   });
   if (objectAsString[objectAsString.length - 1] === ',') {
     objectAsString = objectAsString.slice(0, -1);
   }
   return objectAsString += '}';
+}
+
+/**
+ * Converts pascal/camel cased text to kebab case
+ * @param {*} pascalOrCamelText - pascal/camel cased string.
+ * @returns kebab cased string that is equivalent to the input pascal/camel text.
+ */
+function pOrCToKebab(pascalOrCamelText) {
+  return !pascalOrCamelText ? '' :
+    (pascalOrCamelText[0].toLowerCase() + pascalOrCamelText.slice(1).replace(/([A-Z])/g, '-$1').toLowerCase()).replace(/\s/g, '');
+}
+
+
+/**
+ * Converts kebab cased text to pascal/camel case
+ * @param {*} kebabText - kebab cased string.
+ * @param {*} pascal - Boolean. "true" if the it should return pascal cased string.
+ * @returns pascal or camel cased string that is equivalent to the input kebab text.
+ */
+function kebabToPOrC(kebabText, pascal = false) {
+  if (!kebabText) return '';
+  let pascalText = (kebabText.split('-').map(x => (x[0].toUpperCase() + x.slice(1)).trim()).join(''));
+  return pascal ? pascalText : pascalText[0].toLowerCase() + pascalText.slice(1);
 }
