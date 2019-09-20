@@ -3,7 +3,7 @@
 ## Languages
 - JavaScript
 
-## Linters Config
+## Linter Config
 - .jshintrc
 ```js
 {
