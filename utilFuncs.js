@@ -1,8 +1,8 @@
 /* 'esversion: 8' */
-function recursiveGetVal(Obj, key) {
+function deepSearch(Obj, key) {
   for (let outerKey of Object.keys(Obj)) {
-    if ((Object.keys(Obj[outerKey])).length > 0) {
-      this.recursiveGetVal(Obj[outerKey], key);
+    if ((Object.keys(Obj[outerKey])).length > 0 && outerKey !== key) {
+      return deepSearch(Obj[outerKey], key);
     } else {
       if (outerKey === key) {
         return Obj[key];
