@@ -1,7 +1,7 @@
 // const utils = require('../lib/utilFuncs');
 import utils from '../lib/utilFuncs.js';
 const o = {
-    a: "lfkglkfg",
+    qwerty: "lfkglkfg",
     b: "pppppppp",
     f: {
         dnc: "ssdsdf",
@@ -27,6 +27,7 @@ const o = {
 };
 
 let result; // because, hovering >>> typing.
+result = utils.deepReplace(o, 'a', 'MothahFkinA'); console.log(result);
 result = utils.deepReplace(o, 'a', 'MothahFkinA', 'all'); console.log(result);
 result = utils.deepSearch(o, 'l'); console.log(result);
 result = utils.getURLQParams('http://sdf.sdfs.com/llk?bagOf=fur&suma=cumlaude'); console.log(result);
