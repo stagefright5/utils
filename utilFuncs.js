@@ -11,10 +11,30 @@ function deepSearch(Obj, key) {
       return deepSearch(Obj[outerKey], key);
     } else {
       if (outerKey === key) {
-        return Obj[key];
+
+/**
+ * Replace the value of a key of an object at any level.
+ * @param {*} Obj Object in which the replace should be done.
+ * @param {*} key (string) the key whose value should be replaced.
+ * @param {*} replacementStrategy ('first' | 'all') Whether to replace only the first match or all the matches.
+ * Defaults to 'first'.
+ * @returns the original Obj with replaced value for the key.
+ */
+function deepReplace(Obj, searchKey, value, replacementStrategy = 'first') {
+  let replaced = false;
+  for (let outerKey of Object.keys(Obj)) {
+    if (isKVObject(Obj[outerKey]) && outerKey !== searchKey && !replaced) {
+      deepReplace(Obj[outerKey], searchKey, value, replacementStrategy);
+    } else {
+      if (outerKey === searchKey) {
+        Obj[searchKey] = value;
+        if (replacementStrategy === 'first') {
+          replaced = true;
+        }
       }
     }
   }
+  return Obj;
 }
 
 function checkSettingsProperties(settingsJson, defaultSettings) {
