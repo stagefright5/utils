@@ -3,7 +3,7 @@
 #### Language/s
 - JavaScript
 
-#### Linter Configuration
+#### Linter Configurations
 - .jshintrc
 ```js
 {
@@ -13,4 +13,12 @@
     "funcscope": true,
     "varstmt": true
 }
+```
+#### How To Run
+Why would you even...? okay, this is how you do it:
+- Requirement
+    - Node v12
+- Command To Run
+```shell
+node --experimental-modules ./test/debug.js
 ```
