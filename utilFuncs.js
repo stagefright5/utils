@@ -1,4 +1,10 @@
 /* 'esversion: 8' */
+function isKVObject(entity) {
+  return entity !== null &&
+    !Array.isArray(entity) &&
+    typeof entity === 'object' &&
+    Object.keys(entity).length;
+}
 function deepSearch(Obj, key) {
   for (let outerKey of Object.keys(Obj)) {
     if ((Object.keys(Obj[outerKey])).length > 0 && outerKey !== key) {
