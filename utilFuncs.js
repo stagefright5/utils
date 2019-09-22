@@ -5,12 +5,26 @@ function isKVObject(entity) {
     typeof entity === 'object' &&
     Object.keys(entity).length;
 }
+
+/**
+ * Get the value of a key of an object at any level.
+ * @param {*} Obj Object on which the search should be done.
+ * @param {*} key - (string) the key whose value should be returned.
+ * @returns Value of the first occurance of the key. If not found, null.
+ */
 function deepSearch(Obj, key) {
+  let value = null;
   for (let outerKey of Object.keys(Obj)) {
-    if ((Object.keys(Obj[outerKey])).length > 0 && outerKey !== key) {
-      return deepSearch(Obj[outerKey], key);
+    if (isKVObject(Obj[outerKey]) && outerKey !== key & !value) {
+      value = deepSearch(Obj[outerKey], key);
     } else {
       if (outerKey === key) {
+        value = Obj[key];
+      }
+    }
+  }
+  return value;
+}
 
 /**
  * Replace the value of a key of an object at any level.
