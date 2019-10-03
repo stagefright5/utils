@@ -16,9 +16,10 @@
 ```
 #### How To Run
 Why would you even...? okay, this is how you do it:
-- Requirement
-    - Node v12
-- Command To Run
-```shell
-node --experimental-modules ./test/debug.js
-```
+##### Requirement
+- Node v12
+##### Command To Run
+- Debug
+    ```shell
+    npm run debug
+    ```
