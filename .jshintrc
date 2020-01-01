@@ -1,8 +1,0 @@
-{
-    "esversion": 8,
-    "node": true,
-    "undef": true,
-    "funcscope": true,
-    "varstmt": true,
-    "browser": true
-}
