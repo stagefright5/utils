@@ -44,7 +44,7 @@ const o2 = {
     },
     uuu: {
         lll: [],
-        },
+    },
     weq: {
         d: 'sadasd',
     },
@@ -67,4 +67,7 @@ result = utils.kebabFromPorC('YouCanPrepareKebabFromPork');
 console.log(result);
 
 result = utils.pOrCFromKebab('you-can-get-pork-from-kebab-too');
+console.log(result);
+
+result = utils.getObjAsString(o2, false);
 console.log(result);
