@@ -41,24 +41,35 @@ function createDeepReplaceArray(obj) {
 }
 
 let result = null; // because, hovering is wayyy better than typing.
-result = utils.deepReplace(o2, createDeepReplaceArray({ a: 'MothahFkinA', uuu: 'MothahFkinUUU' }), 'all');
+
+// -------- deepReplace ----------- //
+// replace fisrst instance
+result = utils.deepReplace(o2, createDeepReplaceArray({ a: 'MothahFkinA', uuu: 'MothahFkinUUU' }), 'first');
+console.log(result);
+// replace all
+result = utils.deepReplace(o2, { searchKey: 'a', value: 'MothahFkinA' }, 'all');
 console.log(result);
 
-result = utils.deepReplace(o2, 'a', { searchKey: 'a', value: 'MothahFkinA' }, 'all');
+// -------- deepSearch ----------- //
+// replace fisrst instance
+result = utils.deepSearch(o2, 'oppp', false);
+console.log(result);
+// replace all
+result = utils.deepSearch(o2, 'oppp', true);
 console.log(result);
 
-result = utils.deepSearch(o, 'l');
-console.log(result);
-
+// -------- getURLQParams -------- //
 result = utils.getURLQParams('http://sdf.sdfs.com/llk?bagOf=fur&suma=cumlaude');
 console.log(result);
 
+// -------- kebabFromPorC -------- //
 result = utils.kebabFromPorC('YouCanPrepareKebabFromPork');
-console.log.kggkg(result);
+console.log(result);
 
+// -------- pOrCFromKebab -------- //
 result = utils.pOrCFromKebab('you-can-get-pork-from-kebab-too');
 console.log(result);
 
+// -------- getObjAsString -------- //
 result = utils.getObjAsString(o2, false);
 console.log(result);
-
