@@ -191,7 +191,7 @@ module.exports = {
 		'brace-style': 1,
 		'camelcase': [1, { properties: 'never' }],
 		// 'capitalized-comments': 0,
-		'comma-dangle': [1, 'always-multiline'],
+		// 'comma-dangle': [1, 'always-multiline'],
 		'comma-spacing': 1,
 		'comma-style': 1,
 		'computed-property-spacing': 1,
@@ -236,7 +236,7 @@ module.exports = {
 		// 'lines-around-comment': 0,
 		// 'max-depth': 0,
 		'max-len': [1, {
-			code: 80,
+			code: 140,
 			tabWidth: 1,
 			ignoreUrls: true,
 			ignorePattern: 'goog\.(module|require)',
